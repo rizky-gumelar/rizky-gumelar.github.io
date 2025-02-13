@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-16 lg:py-24 xl:py-40 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800">
+      <section className="w-full py-12 md:py-16 lg:py-24 xl:py-40 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900 dark:to-cyan-900">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
             <div className="flex flex-col items-center md:items-start space-y-4 text-center md:text-left md:w-1/2">
@@ -31,7 +31,7 @@ export default function Home() {
                 <Button variant="outline" asChild>
                   <Link href="#projects">View Projects</Link>
                 </Button>
-                <Button variant="secondary" asChild>
+                <Button variant="secondary" asChild className="bg-red-600 hover:bg-red-700 text-white">
                   <Link href="/MyCV.pdf" target="_blank">
                     <FileText className="mr-2 h-4 w-4" /> Resume
                   </Link>
@@ -39,7 +39,7 @@ export default function Home() {
               </div>
             </div>
             <div className="md:w-1/2 flex justify-center animate-fade-in animation-delay-600">
-              <Image src="/pic2.png" alt="Rizky Syah Gumelar" width={400} height={400} className="rounded-full" />
+              <Image src="/pic3.png" alt="Rizky Syah Gumelar" width={400} height={400} className="rounded-full" />
             </div>
           </div>
         </div>
@@ -66,7 +66,9 @@ export default function Home() {
       {/* Skills Sections */}
       <section
         id="skills"
-        className="w-full py-12 md:py-24 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800"
+        // className="w-full py-12 md:py-24 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800"
+        className="w-full py-12 md:py-24 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900 dark:to-cyan-900"
+
       >
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">Skills</h2>
@@ -154,7 +156,7 @@ export default function Home() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="w-full py-12 md:py-24 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800"
+        className="w-full py-12 md:py-24 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900 dark:to-cyan-900"
       >
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center">Contact Me</h2>

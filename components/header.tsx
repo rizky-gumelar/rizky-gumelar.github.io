@@ -12,8 +12,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex flex-col md:flex-row h-14 md:h-auto items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2 py-6 whitespace-nowrap flex-shrink-0">
+      <div className="container flex md:flex-row h-14 md:h-auto items-center justify-between">
+        <Link href="/" className="flex items-center space-x-2 py-6">
           <Image src="/logo.png" alt="Logo" width={32} height={32} />
           <span className="font-bold">Rizky Gumelar</span>
         </Link>
@@ -27,9 +27,9 @@ export function Header() {
             <Link href="#ui-ux-design">UI/UX Design</Link> */}
             <Link href="#projects">Projects</Link>
             <Link href="#contact">Contact</Link>
-            <Button asChild className="w-full md:w-auto">
+            {/* <Button asChild className="w-full md:w-auto">
               <Link href="#contact">Hire Me</Link>
-            </Button>
+            </Button> */}
           </nav>
           <ThemeToggle />
           <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
