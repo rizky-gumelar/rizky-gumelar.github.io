@@ -32,7 +32,7 @@ export default function Home() {
                   <Link href="#projects">View Projects</Link>
                 </Button>
                 <Button variant="secondary" asChild className="bg-red-600 hover:bg-red-700 text-white">
-                  <Link href="/MyCV.pdf" target="_blank">
+                  <Link href="/CV_RizkyGumelar.pdf" target="_blank">
                     <FileText className="mr-2 h-4 w-4" /> Resume
                   </Link>
                 </Button>
