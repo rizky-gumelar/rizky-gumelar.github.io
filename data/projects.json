@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "Data Analysis Dashboard",
+    "description": "Interactive dashboard for visualizing complex datasets",
+    "image": "/placeholder.svg?height=200&width=300",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "title": "E-commerce Platform",
+    "description": "Fully responsive online store with cart and checkout functionality",
+    "image": "/placeholder.svg?height=200&width=300",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "title": "Mobile App Design",
+    "description": "User-centered design for a fitness tracking application",
+    "image": "/placeholder.svg?height=200&width=300",
+    "link": "#"
+  }
+]
+
