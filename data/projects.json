@@ -4,21 +4,74 @@
     "title": "Data Analysis Dashboard",
     "description": "Interactive dashboard for visualizing complex datasets",
     "image": "/placeholder.svg?height=200&width=300",
-    "link": "#"
+    "link": "#",
+    "category": "data",
+    "techStack": [
+      "Python",
+      "Power BI",
+      "SQL"
+    ]
   },
   {
     "id": 2,
     "title": "E-commerce Platform",
     "description": "Fully responsive online store with cart and checkout functionality",
     "image": "/placeholder.svg?height=200&width=300",
-    "link": "#"
+    "link": "#",
+    "category": "web",
+    "techStack": [
+      "React.js",
+      "Next.js",
+      "Tailwind CSS"
+    ]
   },
   {
     "id": 3,
     "title": "Mobile App Design",
     "description": "User-centered design for a fitness tracking application",
     "image": "/placeholder.svg?height=200&width=300",
-    "link": "#"
+    "link": "#",
+    "category": "ui/ux",
+    "techStack": [
+      "Figma"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Machine Learning Model",
+    "description": "Predictive model for customer churn analysis",
+    "image": "/placeholder.svg?height=200&width=300",
+    "link": "#",
+    "category": "data",
+    "techStack": [
+      "Python",
+      "TensorFlow",
+      "Scikit-learn"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Portfolio Website",
+    "description": "Personal portfolio website showcasing projects and skills",
+    "image": "/placeholder.svg?height=200&width=300",
+    "link": "#",
+    "category": "web",
+    "techStack": [
+      "React.js",
+      "Next.js",
+      "Tailwind CSS"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Brand Identity Design",
+    "description": "Complete brand identity design for a startup company",
+    "image": "/placeholder.svg?height=200&width=300",
+    "link": "#",
+    "category": "ui/ux",
+    "techStack": [
+      "Figma",
+      "Adobe Illustrator"
+    ]
   }
 ]
-
