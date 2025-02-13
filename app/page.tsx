@@ -111,33 +111,41 @@ export default function Home() {
       <section id="projects" className="w-full py-12 md:py-24 bg-gray-100 dark:bg-gray-800">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center">Projects</h2>
-          <div className="flex justify-center space-x-4 mb-8">
+
+          {/* Button Group for Categories */}
+          <div className="flex flex-wrap justify-center space-x-4 mb-8">
             <Button
               onClick={() => setSelectedCategory(null)}
               variant={selectedCategory === null ? "default" : "outline"}
+              className="mb-2 sm:mb-0"
             >
               All
             </Button>
             <Button
               onClick={() => setSelectedCategory("data")}
               variant={selectedCategory === "data" ? "default" : "outline"}
+              className="mb-2 sm:mb-0"
             >
               Data Science
             </Button>
             <Button
               onClick={() => setSelectedCategory("web")}
               variant={selectedCategory === "web" ? "default" : "outline"}
+              className="mb-2 sm:mb-0"
             >
               Web Development
             </Button>
             <Button
               onClick={() => setSelectedCategory("ui/ux")}
               variant={selectedCategory === "ui/ux" ? "default" : "outline"}
+              className="mb-2 sm:mb-0"
             >
               UI/UX Design
             </Button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          {/* Project Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => (
               <ProjectCard
                 key={project.id}
