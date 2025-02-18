@@ -64,14 +64,24 @@
   },
   {
     "id": 6,
-    "title": "Brand Identity Design",
-    "description": "Complete brand identity design for a startup company",
-    "image": "/placeholder.svg?height=200&width=300",
+    "title": "jarictku.com UI Design",
+    "description": "Designed UI/UX for jarictku.com, a website for matching Semarang batik clothes.",
+    "image": "/img/jarictku.com.png",
     "link": "#",
     "category": "ui/ux",
     "techStack": [
-      "Figma",
-      "Adobe Illustrator"
+      "Figma"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "OISEE UI Design",
+    "description": "Designed the ui/ux for the HISEE application, an application for visualizing the view from the seats at a concert using VR.",
+    "image": "/img/OISEE.png",
+    "link": "#",
+    "category": "ui/ux",
+    "techStack": [
+      "Figma"
     ]
   }
 ]
