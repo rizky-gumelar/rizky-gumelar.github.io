@@ -271,7 +271,7 @@ function ProjectCard({
 
 function ContactForm() {
   return (
-    <form action="https://formspree.io/f/mkgovpkq" method="POST" className="space-y-4">
+    <form action="https://mail.linkup.my.id/form/PXVzyrHgFkVrr6TUhl3H2X3PYVco8gdV" method="POST" className="space-y-4">
       <div className="space-y-2">
         <label
           htmlFor="name"
