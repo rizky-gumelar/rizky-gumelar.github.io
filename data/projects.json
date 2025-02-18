@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "LinkUp Mail",
-    "description": "Rest API Emailing for static website",
+    "description": "Rest API service designed for easy email integration with static websites without the need for complex backend infrastructure.",
     "image": "/img/mymail.png?height=200&width=300",
     "link": "https://mail.linkup.my.id/",
     "category": "Web",
@@ -26,13 +26,14 @@
   },
   {
     "id": 3,
-    "title": "Mobile App Design",
-    "description": "User-centered design for a fitness tracking application",
-    "image": "/placeholder.svg?height=200&width=300",
-    "link": "#",
-    "category": "UI/UX",
+    "title": "Instant Machine Learning Prediction for Regression",
+    "description": "An easy-to-use app that provides real-time, accurate regression predictions with customizable models",
+    "image": "/img/predtest.streamlit.app_.png",
+    "link": "https://predtest.streamlit.app/",
+    "category": "Data & Machine Learning",
     "techStack": [
-      "Figma"
+      "Python",
+      "Streamlit"
     ]
   },
   {
