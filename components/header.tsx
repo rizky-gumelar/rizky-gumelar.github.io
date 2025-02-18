@@ -22,7 +22,7 @@ export function Header() {
             className={`${isMenuOpen ? "flex" : "hidden"
               } md:flex absolute md:relative top-14 md:top-0 left-0 right-0 flex-col md:flex-row items-center justify-end space-y-4 md:space-y-0 md:space-x-6 bg-background md:bg-transparent p-4 md:py-2 w-full text-sm font-medium ml-auto`}
           >
-            <Link href="#data-science">Skills</Link>
+            <Link href="#skills">Skills</Link>
             {/* <Link href="#web-development">Web Development</Link>
             <Link href="#ui-ux-design">UI/UX Design</Link> */}
             <Link href="#projects">Projects</Link>
