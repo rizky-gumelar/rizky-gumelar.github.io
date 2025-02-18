@@ -14,15 +14,14 @@
   },
   {
     "id": 2,
-    "title": "E-commerce Platform",
-    "description": "Fully responsive online store with cart and checkout functionality",
-    "image": "/placeholder.svg?height=200&width=300",
-    "link": "#",
-    "category": "Web",
+    "title": "Air Quality Analysis",
+    "description": "Visualization of air quality index analysis at various stations in China",
+    "image": "/img/final-airquality.streamlit.app.png",
+    "link": "https://final-airquality.streamlit.app/",
+    "category": "Data & Machine Learning",
     "techStack": [
-      "React.js",
-      "Next.js",
-      "Tailwind CSS"
+      "Python",
+      "Streamlit"
     ]
   },
   {
