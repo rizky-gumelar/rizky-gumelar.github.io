@@ -68,7 +68,7 @@
     "description": "Designed UI/UX for jarictku.com, a website for matching Semarang batik clothes.",
     "image": "/img/jarictku.com.png",
     "link": "#",
-    "category": "ui/ux",
+    "category": "UI/UX",
     "techStack": [
       "Figma"
     ]
@@ -76,10 +76,10 @@
   {
     "id": 7,
     "title": "OISEE UI Design",
-    "description": "Designed the ui/ux for the HISEE application, an application for visualizing the view from the seats at a concert using VR.",
+    "description": "Designed the UI/UX for the HISEE application, an application for visualizing the view from the seats at a concert using VR.",
     "image": "/img/OISEE.png",
     "link": "#",
-    "category": "ui/ux",
+    "category": "UI/UX",
     "techStack": [
       "Figma"
     ]
