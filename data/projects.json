@@ -38,28 +38,28 @@
   },
   {
     "id": 4,
-    "title": "Machine Learning Model",
-    "description": "Predictive model for customer churn analysis",
-    "image": "/placeholder.svg?height=200&width=300",
-    "link": "#",
-    "category": "Data & Machine Learning",
+    "title": "AICHI TRAINING CENTER UI Design",
+    "description": "Designing the UI for the new website of LPK AICHI Training Center, focusing on usability, accessibility, and optimizing user experience.",
+    "image": "/img/ATC.png",
+    "link": "#projects",
+    "category": "UI/UX",
     "techStack": [
-      "Python",
-      "TensorFlow",
-      "Scikit-learn"
+      "Figma"
     ]
   },
   {
     "id": 5,
-    "title": "Portfolio Website",
-    "description": "Personal portfolio Website showcasing projects and skills",
-    "image": "/placeholder.svg?height=200&width=300",
-    "link": "#",
-    "category": "Web",
+    "title": "SampahKita - Trash Classification API",
+    "description": "SampahKita is an application that automatically classifies waste using machine learning. The model is trained on 12,000 images and achieves an accuracy of 92%.",
+    "image": "/img/sampahkita.png",
+    "link": "https://github.com/rizky-gumelar/Sampahkita",
+    "category": "Data & Machine Learning",
     "techStack": [
-      "React.js",
-      "Next.js",
-      "Tailwind CSS"
+      "Python",
+      "Google Colab",
+      "Flask",
+      "Tensorflow",
+      "Postman"
     ]
   },
   {
