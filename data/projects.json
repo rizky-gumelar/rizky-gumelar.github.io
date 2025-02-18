@@ -1,15 +1,15 @@
 [
   {
     "id": 1,
-    "title": "Data Analysis Dashboard",
-    "description": "Interactive dashboard for visualizing complex datasets",
-    "image": "/placeholder.svg?height=200&width=300",
-    "link": "#",
-    "category": "data",
+    "title": "LinkUp Mail",
+    "description": "Rest API Emailing for static website",
+    "image": "/img/mymail.png?height=200&width=300",
+    "link": "https://mail.linkup.my.id/",
+    "category": "Web",
     "techStack": [
-      "Python",
-      "Power BI",
-      "SQL"
+      "Laravel",
+      "Tailwind CSS",
+      "MySQL"
     ]
   },
   {
@@ -18,7 +18,7 @@
     "description": "Fully responsive online store with cart and checkout functionality",
     "image": "/placeholder.svg?height=200&width=300",
     "link": "#",
-    "category": "web",
+    "category": "Web",
     "techStack": [
       "React.js",
       "Next.js",
@@ -31,7 +31,7 @@
     "description": "User-centered design for a fitness tracking application",
     "image": "/placeholder.svg?height=200&width=300",
     "link": "#",
-    "category": "ui/ux",
+    "category": "UI/UX",
     "techStack": [
       "Figma"
     ]
@@ -42,7 +42,7 @@
     "description": "Predictive model for customer churn analysis",
     "image": "/placeholder.svg?height=200&width=300",
     "link": "#",
-    "category": "data",
+    "category": "Data & Machine Learning",
     "techStack": [
       "Python",
       "TensorFlow",
@@ -52,10 +52,10 @@
   {
     "id": 5,
     "title": "Portfolio Website",
-    "description": "Personal portfolio website showcasing projects and skills",
+    "description": "Personal portfolio Website showcasing projects and skills",
     "image": "/placeholder.svg?height=200&width=300",
     "link": "#",
-    "category": "web",
+    "category": "Web",
     "techStack": [
       "React.js",
       "Next.js",

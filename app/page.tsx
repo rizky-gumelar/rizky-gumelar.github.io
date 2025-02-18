@@ -122,22 +122,22 @@ export default function Home() {
               All
             </Button>
             <Button
-              onClick={() => setSelectedCategory("data")}
-              variant={selectedCategory === "data" ? "default" : "outline"}
+              onClick={() => setSelectedCategory("Data & Machine Learning")}
+              variant={selectedCategory === "Data & Machine Learning" ? "default" : "outline"}
               className="mb-2 sm:mb-0"
             >
               Data Science
             </Button>
             <Button
-              onClick={() => setSelectedCategory("web")}
-              variant={selectedCategory === "web" ? "default" : "outline"}
+              onClick={() => setSelectedCategory("Web")}
+              variant={selectedCategory === "Web" ? "default" : "outline"}
               className="mb-2 sm:mb-0"
             >
               Web Development
             </Button>
             <Button
-              onClick={() => setSelectedCategory("ui/ux")}
-              variant={selectedCategory === "ui/ux" ? "default" : "outline"}
+              onClick={() => setSelectedCategory("UI/UX")}
+              variant={selectedCategory === "UI/UX" ? "default" : "outline"}
               className="mb-2 sm:mb-0"
             >
               UI/UX Design
@@ -260,7 +260,7 @@ function ProjectCard({
           ))}
         </div>
         <Button asChild>
-          <Link href={link}>
+          <Link href={link} target="_blank">
             View Project <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
