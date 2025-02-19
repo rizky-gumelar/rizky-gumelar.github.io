@@ -166,19 +166,18 @@
   box-shadow: 0 0 5px white, 0 0 10px rgba(255, 255, 255, 0.8);
   border-radius: 50%;
   opacity: 0.8;
-  transform: translateY(-100vh);
-  animation: star-fall linear infinite;
+  animation: star-curve linear infinite;
 }
 
-@keyframes star-fall {
+@keyframes star-curve {
   0% {
-    transform: translateY(-10vh) translateX(0);
+    transform: translateX(0) translateY(0) rotate(0deg);
     opacity: 0.8;
   }
 
   100% {
-    transform: translateY(100vh) translateX(10vw);
-    /* Sedikit geser X untuk efek diagonal */
+    transform: translateX(20vw) translateY(100vh) rotate(180deg);
+    /* Efek lengkungan */
     opacity: 0;
   }
 }

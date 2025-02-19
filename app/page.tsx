@@ -43,31 +43,32 @@ export default function Home() {
 
     const star = document.createElement("span");
     star.className = "star";
-    const size = Math.random() * 3 + 1;
-    const duration = Math.random() * 3 + 2;
+
+    const size = Math.random() * 2 + 1;
+    const duration = Math.random() * 5 + 3; // Lebih lama untuk efek star trail
     const delay = Math.random() * 2;
     const left = Math.random() * 100;
+    const rotation = Math.random() * 360; // Rotasi acak untuk setiap bintang
 
     star.style.width = `${size}px`;
     star.style.height = `${size}px`;
     star.style.left = `${left}vw`;
     star.style.animationDuration = `${duration}s`;
     star.style.animationDelay = `${delay}s`;
+    star.style.transform = `rotate(${rotation}deg)`;
 
     container.appendChild(star);
 
-    // Hapus elemen setelah animasi selesai
     setTimeout(() => star.remove(), (duration + delay) * 1000);
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
       generateStars();
-    }, 300); // Setiap 300ms akan muncul bintang baru
+    }, 300); // Interval lebih cepat untuk efek star trail
 
-    return () => clearInterval(interval); // Bersihkan interval saat komponen unmount
+    return () => clearInterval(interval);
   }, []);
-
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
