@@ -1,11 +1,34 @@
 "use client"
-
+import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, BarChart, Code, Palette, FileText, Linkedin, MessageCircle } from "lucide-react"
+import { ArrowRight, BarChart, Code, Palette, FileText, Linkedin, MessageCircle, Instagram } from "lucide-react"
 import projectsData from "@/data/projects.json"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import { useEffect } from "react";
+
+function AnimatedSection({ children, className, id }: { children: React.ReactNode; className?: string; id?: string }) {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.5 }}
+      className={className}
+      id={id}
+    >
+      {children}
+    </motion.div>
+  )
+}
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
@@ -14,8 +37,41 @@ export default function Home() {
     ? projectsData.filter((project) => project.category === selectedCategory)
     : projectsData
 
+  const generateStars = () => {
+    const container = document.querySelector(".stars-container");
+    if (!container) return;
+
+    const star = document.createElement("span");
+    star.className = "star";
+    const size = Math.random() * 3 + 1;
+    const duration = Math.random() * 3 + 2;
+    const delay = Math.random() * 2;
+    const left = Math.random() * 100;
+
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    star.style.left = `${left}vw`;
+    star.style.animationDuration = `${duration}s`;
+    star.style.animationDelay = `${delay}s`;
+
+    container.appendChild(star);
+
+    // Hapus elemen setelah animasi selesai
+    setTimeout(() => star.remove(), (duration + delay) * 1000);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      generateStars();
+    }, 300); // Setiap 300ms akan muncul bintang baru
+
+    return () => clearInterval(interval); // Bersihkan interval saat komponen unmount
+  }, []);
+
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
+      <div className="stars-container"></div>
       {/* Hero Section */}
       <section className="w-full py-12 md:py-16 lg:py-24 xl:py-40 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900 dark:to-cyan-900">
         <div className="container px-4 md:px-6">
@@ -46,7 +102,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="w-full py-12 md:py-24 bg-gray-50 dark:bg-gray-900">
+      <AnimatedSection className="w-full py-12 md:py-24 bg-gray-50 dark:bg-gray-900">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">About Me</h2>
           <div className="max-w-3xl mx-auto text-center">
@@ -61,10 +117,10 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Skills Sections */}
-      <section
+      <AnimatedSection
         id="skills"
         // className="w-full py-12 md:py-24 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800"
         className="w-full py-12 md:py-24 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900 dark:to-cyan-900"
@@ -105,10 +161,10 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Projects Section */}
-      <section id="projects" className="w-full py-12 md:py-24 bg-gray-100 dark:bg-gray-800">
+      <AnimatedSection id="projects" className="w-full py-12 md:py-24 bg-gray-100 dark:bg-gray-800">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center">Projects</h2>
 
@@ -159,10 +215,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Contact Section */}
-      <section
+      <AnimatedSection
         id="contact"
         className="w-full py-12 md:py-24 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900 dark:to-cyan-900"
       >
@@ -189,11 +245,17 @@ export default function Home() {
                     <span className="sr-only">WhatsApp</span>
                   </Link>
                 </Button>
+                <Button variant="outline" size="icon" asChild className="bg-[#E1306C] hover:bg-[#E1306C]/90 text-white">
+                  <Link href="https://instagram.com/rizkysyahg" target="_blank" rel="noopener noreferrer">
+                    <Instagram className="h-5 w-5" />
+                    <span className="sr-only">Instagram</span>
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </div>
   )
 }
@@ -205,7 +267,11 @@ function SkillCard({
   techStack,
 }: { icon: any; title: string; description: string; techStack: string[] }) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-transform hover:scale-105">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 ">
       <Icon className="h-12 w-12 mb-4" />
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="text-gray-600 dark:text-gray-300 mb-4">{description}</p>
@@ -219,7 +285,7 @@ function SkillCard({
           </span>
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
 
