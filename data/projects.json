@@ -16,7 +16,7 @@
     "id": 2,
     "title": "SampahKita - Trash Classification API",
     "description": "SampahKita is an application that automatically classifies waste using machine learning. The model is trained on 12,000 images and achieves an accuracy of 92%.",
-    "image": "/img/sampahkita.png",
+    "image": "/img/SampahKitaAPI.png",
     "link": "https://github.com/rizky-gumelar/Sampahkita",
     "category": "Data & Machine Learning",
     "techStack": [
@@ -68,7 +68,7 @@
     "id": 5,
     "title": "AICHI TRAINING CENTER UI Design",
     "description": "Designing the UI for the new website of LPK AICHI Training Center, focusing on usability, accessibility, and optimizing user experience.",
-    "image": "/img/ATC.png",
+    "image": "/img/ATC.gif",
     "link": "#projects",
     "category": "UI/UX",
     "techStack": [
@@ -79,7 +79,7 @@
     "id": 6,
     "title": "jarictku.com UI Design",
     "description": "Designed UI/UX for jarictku.com, a website for matching Semarang batik clothes.",
-    "image": "/img/jarictku.com.png",
+    "image": "/img/jarictku.com.gif",
     "link": "#",
     "category": "UI/UX",
     "techStack": [
@@ -89,8 +89,19 @@
   {
     "id": 7,
     "title": "OISEE UI Design",
-    "description": "Designed the UI/UX for the HISEE application, an application for visualizing the view from the seats at a concert using VR.",
-    "image": "/img/OISEE.png",
+    "description": "Designed the UI/UX for the OHISEE application, an application for visualizing the view from the seats at a concert using VR.",
+    "image": "/img/OISEE.jpg",
+    "link": "#",
+    "category": "UI/UX",
+    "techStack": [
+      "Figma"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "SampahKita UI Design",
+    "description": "Sampahkita is a mobile IoT application that can classify waste using a smart dustbin device",
+    "image": "/img/SampahKitaUI.gif",
     "link": "#",
     "category": "UI/UX",
     "techStack": [
