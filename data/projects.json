@@ -14,14 +14,17 @@
   },
   {
     "id": 2,
-    "title": "Air Quality Analysis",
-    "description": "Visualization of air quality index analysis at various stations in China",
-    "image": "/img/final-airquality.streamlit.app.png",
-    "link": "https://final-airquality.streamlit.app/",
+    "title": "SampahKita - Trash Classification API",
+    "description": "SampahKita is an application that automatically classifies waste using machine learning. The model is trained on 12,000 images and achieves an accuracy of 92%.",
+    "image": "/img/sampahkita.png",
+    "link": "https://github.com/rizky-gumelar/Sampahkita",
     "category": "Data & Machine Learning",
     "techStack": [
       "Python",
-      "Streamlit"
+      "Google Colab",
+      "Flask",
+      "Tensorflow",
+      "Postman"
     ]
   },
   {
@@ -38,6 +41,31 @@
   },
   {
     "id": 4,
+    "title": "Competition Landscape Website Indosat",
+    "description": "Web application for collecting and visualizing survey data, providing intuitive data management and visual analysis to help make informed and fast decisions.",
+    "image": "/img/javaioh.png",
+    "link": "https://javaioh.com/",
+    "category": "Web",
+    "techStack": [
+      "Laravel",
+      "Filament",
+      "MySQL"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Air Quality Analysis",
+    "description": "Visualization of air quality index analysis at various stations in China",
+    "image": "/img/final-airquality.streamlit.app.png",
+    "link": "https://final-airquality.streamlit.app/",
+    "category": "Data & Machine Learning",
+    "techStack": [
+      "Python",
+      "Streamlit"
+    ]
+  },
+  {
+    "id": 5,
     "title": "AICHI TRAINING CENTER UI Design",
     "description": "Designing the UI for the new website of LPK AICHI Training Center, focusing on usability, accessibility, and optimizing user experience.",
     "image": "/img/ATC.png",
@@ -45,21 +73,6 @@
     "category": "UI/UX",
     "techStack": [
       "Figma"
-    ]
-  },
-  {
-    "id": 5,
-    "title": "SampahKita - Trash Classification API",
-    "description": "SampahKita is an application that automatically classifies waste using machine learning. The model is trained on 12,000 images and achieves an accuracy of 92%.",
-    "image": "/img/sampahkita.png",
-    "link": "https://github.com/rizky-gumelar/Sampahkita",
-    "category": "Data & Machine Learning",
-    "techStack": [
-      "Python",
-      "Google Colab",
-      "Flask",
-      "Tensorflow",
-      "Postman"
     ]
   },
   {

@@ -108,13 +108,10 @@ export default function Home() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">About Me</h2>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-              I'm a passionate Data Scientist, Web Developer, and UI/UX Designer with a keen interest in creating
-              innovative solutions. With a background in computer science and a love for problem-solving, I strive to
-              bridge the gap between data-driven insights and user-friendly applications.
-            </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              When I'm not coding or analyzing data, you can find me exploring new technologies, contributing to
-              open-source projects, or enjoying a good book on design principles.
+              21 years old Fresh Graduate in Computer Science from Universitas Dian Nuswantoro, with expertise in Data Science, Web Development,
+              and UI/UX Design. Skilled in Intelligent Systems, Data Analysis, Machine Learning, and Frontend Development, with experience
+              leading teams and creating innovative solutions through organizational and project-based work. Completed the Machine Learning cohort
+              at Bangkit Academy 2024.
             </p>
           </div>
         </div>
@@ -152,13 +149,13 @@ export default function Home() {
               icon={Code}
               title="Web Development"
               description="Building responsive and performant web applications using modern frameworks and best practices."
-              techStack={["React.js", "Next.js", "Tailwind CSS", "Laravel", "Wordpress"]}
+              techStack={["HTML", "CSS", "Javascript", "Bootstrap", "Tailwind CSS", "Laravel", "Wordpress", "React.js", "Next.js"]}
             />
             <SkillCard
               icon={Palette}
               title="UI/UX Design"
               description="Crafting intuitive and visually appealing user interfaces to enhance user experience."
-              techStack={["Figma"]}
+              techStack={["Figma", "Maze", "Photoshop"]}
             />
           </div>
         </div>
