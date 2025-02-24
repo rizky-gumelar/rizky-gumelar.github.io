@@ -96,7 +96,7 @@ export default function Home() {
               </div>
             </div>
             <div className="md:w-1/2 flex justify-center animate-fade-in animation-delay-600">
-              <Image src="/pic3.png" alt="Rizky Syah Gumelar" width={400} height={400} className="rounded-full" />
+              <Image src="/pic5.png" alt="Rizky Syah Gumelar" width={400} height={400} className="rounded-full" />
             </div>
           </div>
         </div>
@@ -106,8 +106,9 @@ export default function Home() {
       <AnimatedSection className="w-full py-12 md:py-24 bg-gray-50 dark:bg-gray-900">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">About Me</h2>
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+          <div className="flex flex-col md:flex-row max-w-5xl mx-auto text-justify">
+            <Image src="/semnasti23.JPG" alt="Rizky Syah Gumelar" width={400} height={300} className="rounded-3xl justify-center mx-auto" />
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 pl-6">
               21 years old Fresh Graduate in Computer Science from Universitas Dian Nuswantoro, with expertise in Data Science, Web Development,
               and UI/UX Design. Skilled in Intelligent Systems, Data Analysis, Machine Learning, and Frontend Development, with experience
               leading teams and creating innovative solutions through organizational and project-based work. Completed the Machine Learning cohort
