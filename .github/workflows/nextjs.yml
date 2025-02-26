@@ -49,7 +49,7 @@ jobs:
             exit 1
           fi
       - name: Create CNAME file
-        run: echo 'rizkys.my.id' > ./public/CNAME
+        run: echo 'gumelar.web.id' > ./public/CNAME
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
