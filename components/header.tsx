@@ -43,7 +43,7 @@ export function Header() {
                   <Link href="/qrcode">QR Code Generator</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/tools2">Tools 2</Link>
+                  <Link href="/t2t_encrypt">Encrypt Text</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

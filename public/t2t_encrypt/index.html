@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Zero Width Steganography - Emoji Smuggling Tool for encoding and decoding hidden messages">
+    <title>Zero Width Steganography | Emoji Smuggling Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Monospace font for code display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Feather Icons from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">⚙️</span>
+                <span class="brand-text">Zero Width Steganography</span>
+            </div>
+            <button class="theme-toggle hidden" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="icon icon-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="icon icon-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="main-container">
+
+        <!-- Interactive Tool Section -->
+        <section class="tool-section">
+            <div class="section-container">
+                <h2 class="section-title">Interactive Encoder/Decoder</h2>
+
+                <!-- Control Panel -->
+                <!-- <div class="control-panel"> -->
+                <div class="hidden">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="visualizeToggle" class="checkbox-input">
+                        <span class="checkbox-text">📍 Visualize Zero Width Characters</span>
+                    </label>
+                </div>
+
+                <!-- Tab Navigation -->
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="encode" aria-label="Encode a message">
+                        <span class="tab-icon">🔒</span>
+                        <span class="tab-text">Encode</span>
+                    </button>
+                    <button class="tab-button" data-tab="decode" aria-label="Decode a message">
+                        <span class="tab-icon">🔓</span>
+                        <span class="tab-text">Decode</span>
+                    </button>
+                </div>
+
+                <!-- Encode Tab -->
+                <div class="tab-content active" id="encode-tab">
+                    <div class="form-group">
+                        <label for="coverText" class="form-label">Cover Text</label>
+                        <textarea id="coverText" class="form-input textarea"
+                            placeholder="Enter visible text (e.g., 'Hello world, this is my message')"
+                            rows="4"></textarea>
+                        <p class="input-hint">This is the text that will visually appear unchanged</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="secretMessage" class="form-label">Secret Message</label>
+                        <textarea id="secretMessage" class="form-input textarea"
+                            placeholder="Enter your secret message (e.g., 'SOS')" rows="3"></textarea>
+                        <p class="input-hint">This message will be hidden in the cover text</p>
+                    </div>
+
+                    <button class="btn btn-primary" id="encodeBtn">🔐 Encode Message</button>
+
+                    <div class="form-group">
+                        <label for="encodedOutput" class="form-label">Encoded Output</label>
+                        <div class="output-wrapper">
+                            <textarea id="encodedOutput" class="form-input textarea monospace" readonly rows="4"
+                                placeholder="Encoded result will appear here..."></textarea>
+                            <button class="btn btn-secondary copy-btn" id="copyEncoded" title="Copy to clipboard">
+                                📋 Copy
+                            </button>
+                        </div>
+                        <div class="byte-info hidden">
+                            <span class="byte-visible">Visible: <strong id="encodeVisibleBytes">0</strong> chars</span>
+                            <span class="byte-total">Total: <strong id="encodeTotalBytes">0</strong> bytes</span>
+                            <span id="encodeWarning" class="warning-badge hidden"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decode Tab -->
+                <div class="tab-content" id="decode-tab">
+                    <div class="form-group">
+                        <label for="encryptedText" class="form-label">Paste Potentially Encoded Text</label>
+                        <textarea id="encryptedText" class="form-input textarea"
+                            placeholder="Paste text that might contain hidden data..." rows="4"></textarea>
+                        <p class="input-hint">The decoder will extract and convert any hidden zero-width characters</p>
+                    </div>
+
+                    <button class="btn btn-primary" id="decodeBtn">🔍 Decode Message</button>
+
+                    <div class="form-group">
+                        <label for="decodedOutput" class="form-label">Decoded Message</label>
+                        <div class="output-wrapper">
+                            <textarea id="decodedOutput" class="form-input textarea monospace" readonly rows="3"
+                                placeholder="Decoded result will appear here..."></textarea>
+                            <button class="btn btn-secondary copy-btn" id="copyDecoded" title="Copy to clipboard">
+                                📋 Copy
+                            </button>
+                        </div>
+                        <div class="byte-info hidden">
+                            <span class="byte-visible">Visible: <strong id="decodeVisibleBytes">0</strong> chars</span>
+                            <span class="byte-total">Total: <strong id="decodeTotalBytes">0</strong> bytes</span>
+                            <span id="decodeWarning" class="warning-badge hidden"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rawZeroWidth" class="form-label">Raw Zero Width Sequence</label>
+                        <div class="output-wrapper">
+                            <textarea id="rawZeroWidth" class="form-input textarea monospace" readonly rows="2"
+                                placeholder="Raw zero-width characters (when visualization is enabled)..."></textarea>
+                            <button class="btn btn-secondary copy-btn" id="copyRaw" title="Copy to clipboard">
+                                📋 Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>⚠️ Educational Tool | Zero Width Steganography Demonstration</p>
+            <p>Use responsibly. Understand the security implications before deployment.</p>
+        </footer>
+    </main>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <p id="toastMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
