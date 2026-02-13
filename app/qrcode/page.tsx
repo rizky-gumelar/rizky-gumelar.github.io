@@ -1,12 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { QRCodeSVG } from "qrcode.react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Slider } from "@/components/ui/slider"
 
 export default function QRCodeGenerator() {
@@ -15,11 +14,44 @@ export default function QRCodeGenerator() {
     const [color, setColor] = useState("#000000")
     const [backgroundColor, setBackgroundColor] = useState("#ffffff")
     const [size, setSize] = useState(200)
-    const [errorCorrection, setErrorCorrection] = useState("M")
+
+    const svgRef = useRef<SVGSVGElement>(null)
 
     const generateQRCode = (e: React.FormEvent) => {
         e.preventDefault()
         setQRCode(url)
+    }
+
+    const downloadQRCodePNG = () => {
+        if (!svgRef.current) return
+
+        const svg = svgRef.current
+        const svgData = new XMLSerializer().serializeToString(svg)
+
+        const canvas = document.createElement("canvas")
+        canvas.width = size
+        canvas.height = size
+        const ctx = canvas.getContext("2d")
+        if (!ctx) return
+
+        const img = new Image()
+        img.onload = () => {
+            ctx.fillStyle = backgroundColor
+            ctx.fillRect(0, 0, size, size)
+            ctx.drawImage(img, 0, 0, size, size)
+
+            const pngUrl = canvas.toDataURL("image/png")
+            const link = document.createElement("a")
+            link.href = pngUrl
+            link.download = "qr-code.png"
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
+        }
+        img.onerror = (err) => {
+            console.error("Failed to convert SVG to PNG", err)
+        }
+        img.src = "data:image/svg+xml;base64," + btoa(svgData)
     }
 
     return (
@@ -78,41 +110,29 @@ export default function QRCodeGenerator() {
                                 className="w-full"
                             />
                         </div>
-                        {/* <div>
-                            <Label htmlFor="errorCorrection">Error Correction Level</Label>
-                            <Select value={errorCorrection} onValueChange={setErrorCorrection}>
-                                <SelectTrigger id="errorCorrection">
-                                    <SelectValue placeholder="Select error correction level" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="L">Low (7%)</SelectItem>
-                                    <SelectItem value="M">Medium (15%)</SelectItem>
-                                    <SelectItem value="Q">Quartile (25%)</SelectItem>
-                                    <SelectItem value="H">High (30%)</SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </div> */}
                         <Button type="submit" className="w-full">
                             Generate QR Code
                         </Button>
                     </form>
                 </CardContent>
-                <CardFooter className="flex justify-center">
+                <CardFooter className="flex flex-col items-center gap-4">
                     {qrCode && (
-                        <div className="mt-4">
+                        <>
                             <QRCodeSVG
+                                ref={svgRef}
                                 value={qrCode}
                                 size={size}
                                 fgColor={color}
                                 bgColor={backgroundColor}
-                                // level={errorCorrection}
                                 includeMargin={true}
                             />
-                        </div>
+                            <Button onClick={downloadQRCodePNG} className="mt-2">
+                                Download QR Code (PNG)
+                            </Button>
+                        </>
                     )}
                 </CardFooter>
             </Card>
         </div>
     )
 }
-
